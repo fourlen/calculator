@@ -22,7 +22,9 @@ namespace Calculator
         }
         public override void InputEqual()
         {
-            //вывод calculator.firstnumber (операция) calculator.firstnumber
+            calculator.cecondNumber = calculator.firstNumber;
+            calculator.Resault();
+            //вывод calculator.firstnumber
             calculator.setState(new EqualState(calculator));
         }
     }

@@ -9,39 +9,31 @@ namespace Calculator
     class Calculator
     {
         private State state;
-        public double firstNumber { get; set; }
-        public double cecondNumber { get; set; }
-        public char operation { get; set; }
+        public double firstNumber { get; set; } = 0;
+        public double cecondNumber { get; set; } = 0;
+        public char operation { get; set; } = ' ';
         public void setState(State s)
         {
             state = s;
         }
-        public double Resault()
+        public void Resault()
         {
-            if (firstNumber != null && operation != null)
+            if (operation == '+')
             {
-                if (cecondNumber == null)
-                {
-                    cecondNumber = firstNumber;
-                }
-                if (operation == '+')
-                {
-                    return firstNumber + cecondNumber;
-                }
-                else if (operation == '-')
-                {
-                    return firstNumber - cecondNumber;
-                }
-                else if (operation == '*')
-                {
-                    return firstNumber * cecondNumber;
-                }
-                else if (operation == '/')
-                {
-                    return firstNumber / cecondNumber;
-                }
+                firstNumber += cecondNumber;
             }
-            return 0;
+            else if (operation == '-')
+            {
+                firstNumber -= cecondNumber;
+            }
+            else if (operation == '*')
+            {
+                firstNumber /= cecondNumber;
+            }   
+            else if (operation == '/')
+            {
+                firstNumber *= cecondNumber;
+            }
         }
     }
 }
