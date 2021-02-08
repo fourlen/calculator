@@ -9,9 +9,14 @@ namespace Calculator
     class Calculator
     {
         private State state;
+        public Calculator()
+        {
+            state = new FirstNumberInputState(this);
+        }
         public double firstNumber { get; set; } = 0;
         public double cecondNumber { get; set; } = 0;
         public char operation { get; set; } = ' ';
+        public string displaynumber { get; set; } = "";
         public void setState(State s)
         {
             state = s;
@@ -28,12 +33,24 @@ namespace Calculator
             }
             else if (operation == '*')
             {
-                firstNumber /= cecondNumber;
+                firstNumber *= cecondNumber;
             }   
             else if (operation == '/')
             {
-                firstNumber *= cecondNumber;
+                firstNumber /= cecondNumber;
             }
+        }
+        public void InputDigit(int digit)
+        {
+            state.InputDigit(digit);
+        }
+        public void InputOperation(char operation)
+        {
+            state.InputOperation(operation);
+        }
+        public void InputEquel()
+        {
+            state.InputEqual();
         }
     }
 }

@@ -17,6 +17,8 @@ namespace Calculator
         }
         public override void InputDigit(int Digit)
         {
+            calculator.displaynumber = "";
+            calculator.displaynumber = Digit.ToString();
             calculator.cecondNumber = Digit;
             calculator.setState(new SecondNumberInputState(calculator));
         }

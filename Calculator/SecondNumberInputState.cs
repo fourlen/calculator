@@ -14,18 +14,19 @@ namespace Calculator
 
         public override void InputDigit(int Digit)
         {
+            calculator.displaynumber += Digit.ToString();
             calculator.cecondNumber = calculator.cecondNumber * 10 + Digit;
         }
         public override void InputEqual()
         {
-            calculator.firstNumber = calculator.Resault();
-            //вывести firstnumber (операция) secondnumber
+            calculator.Resault();
+            calculator.displaynumber = calculator.firstNumber.ToString();
             calculator.setState(new EqualState(calculator));
         }
         public override void InputOperation(char Operation)
         {
-            calculator.firstNumber = calculator.Resault();
-            //вывести firstnumber (операция) secondnumber
+            calculator.Resault();
+            calculator.displaynumber = calculator.firstNumber.ToString();
             calculator.operation = Operation;
             calculator.setState(new OperationState(calculator));
         }

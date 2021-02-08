@@ -13,6 +13,7 @@ namespace Calculator
         { }
         public override void InputDigit(int Digit)
         {
+            calculator.displaynumber = Digit.ToString();
             calculator.firstNumber = Digit;
             calculator.setState(new FirstNumberInputState(calculator));
         }
@@ -22,7 +23,8 @@ namespace Calculator
         }
         public override void InputOperation(char Operation)
         {
-            //calculator.firstnumber= resault
+            //calculator.Resault();
+            calculator.displaynumber = calculator.firstNumber.ToString();
             calculator.operation = Operation;
             calculator.setState(new OperationState(calculator));
         }
