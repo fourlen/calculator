@@ -26,6 +26,7 @@ namespace Calculator
         {
             calculator.cecondNumber = calculator.firstNumber;
             calculator.Resault();
+            calculator.displaynumber = calculator.firstNumber.ToString();
             //вывод calculator.firstnumber
             calculator.setState(new EqualState(calculator));
         }

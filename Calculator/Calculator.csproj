@@ -48,6 +48,7 @@
   <ItemGroup>
     <Compile Include="Calculator.cs" />
     <Compile Include="EqualState.cs" />
+    <Compile Include="ErrorState.cs" />
     <Compile Include="FirstNumberInputState.cs" />
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>

@@ -20,8 +20,11 @@ namespace Calculator
         public override void InputEqual()
         {
             calculator.Resault();
-            calculator.displaynumber = calculator.firstNumber.ToString();
-            calculator.setState(new EqualState(calculator));
+            if (calculator.displaynumber != "Делить на ноль нельзя")
+            {
+                calculator.displaynumber = calculator.firstNumber.ToString();
+                calculator.setState(new EqualState(calculator));
+            }
         }
         public override void InputOperation(char Operation)
         {

@@ -37,7 +37,16 @@ namespace Calculator
             }   
             else if (operation == '/')
             {
-                firstNumber /= cecondNumber;
+                if (cecondNumber != 0)
+                {
+                    firstNumber /= cecondNumber;
+                }
+                else
+                {
+                    displaynumber = "Делить на ноль нельзя";
+                    state = new ErrorState(this);
+                }
+                    
             }
         }
         public void InputDigit(int digit)
